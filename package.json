@@ -2,7 +2,7 @@
     "name": "@jsyzqt/q-oss-auto",
     "version": "1.0.0",
     "description": "",
-    "main": "dist/core.js",
+    "main": "dist/index.js",
     "scripts": {
         "dev": "npx ts-node src/deploy",
         "build": "npx tsc"
