@@ -1,5 +1,5 @@
 {
-    "name": "q-oss-auto",
+    "name": "@jsyzqt/q-oss-auto",
     "version": "1.0.0",
     "description": "",
     "main": "dist/core.js",
