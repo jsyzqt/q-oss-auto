@@ -4,7 +4,8 @@
     "description": "",
     "main": "dist/core.js",
     "scripts": {
-        "dev": "npx ts-node src/deploy"
+        "dev": "npx ts-node src/deploy",
+        "build": "npx tsc"
     },
     "bin": {
         "qsso-auto": "./dist/index.js"
