@@ -11,6 +11,14 @@
     "bin": {
         "qsso-auto": "./dist/index.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jsyzqt/q-oss-auto.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jsyzqt/q-oss-auto/issues"
+    },
+    "homepage": "https://github.com/jsyzqt/q-oss-auto#readme",
     "author": "",
     "license": "LGPL-2.1",
     "devDependencies": {
