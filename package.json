@@ -21,7 +21,6 @@
     "dependencies": {
         "ali-oss": "^6.22.0",
         "commander": "^13.1.0",
-        "glob": "^11.0.1",
         "readdirp": "^4.1.1",
         "upath": "^2.0.1",
         "wildcard-match": "^5.1.4"
