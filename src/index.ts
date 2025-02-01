@@ -3,6 +3,7 @@
 import { Command } from 'commander';
 import upath from 'upath';
 import { UpRun } from './upload';
+import { deployRun } from 'deploy';
 const program = new Command();
 
 program
@@ -18,9 +19,13 @@ const options = program.opts();
 
 if (options.config === undefined) {
     console.log('No confirgue file specified.')
-} else if (options.upload) {
+} else if (options.upload || options.deploy) {
     const configFilePath = upath.resolve(options.config);
     console.log('Use configure file: %s', configFilePath)
-    UpRun(configFilePath, options.setversion);
+    if(options.upload){
+        UpRun(configFilePath, options.setversion);
+    } else if(options.deploy){
+        deployRun(configFilePath);
+    }
 }
 

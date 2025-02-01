@@ -4,6 +4,7 @@ import upath from 'upath';
 import { EventMutex } from './utils/mutex';
 import timers from 'node:timers/promises';
 import { CONFIG_TYPE } from './interface';
+import { trimPath } from './utils/utils';
 
 
 
@@ -21,11 +22,13 @@ export const UpRun = async (configFilePath: string, versionName?: string) => {
     const configStr = await fs.promises.readFile(configFilePath, { encoding: 'utf8' });
     const config: CONFIG_TYPE = JSON.parse(configStr);
 
+    config.remoteSource = trimPath(config.remoteSource);
+
     let aliOSSStore = new OSS(config.oss.config);
 
     const allFilePaths = await getAllFiles(upath.resolve(config.localSource));
-
-    const mutex = new EventMutex(config.uploadConfig.concurrent);
+    
+    const mutex = new EventMutex(config.uploadConfig && config.uploadConfig.concurrent?config.uploadConfig.concurrent:10);
 
     const versionCtrl = config.uploadConfig.versionControl.toLowerCase();
     let versionStr = '';

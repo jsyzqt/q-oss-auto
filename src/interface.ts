@@ -13,7 +13,11 @@ export type CONFIG_TYPE = {
     }
     uploadConfig: {
         concurrent: number,
-        versionControl: "manual" | "auto" | "disable"
+        versionControl: "disable" | "manual" | "auto"
+    },
+    deployConfig:{
+        concurrent: number,
+        versionUsed: "disable" | "latest"
     },
     remoteSource: string,
     localSource: string,
