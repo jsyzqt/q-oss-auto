@@ -3,7 +3,7 @@
 import { Command } from 'commander';
 import upath from 'upath';
 import { UpRun } from './upload';
-import { deployRun } from 'deploy';
+import { deployRun } from './deploy';
 const program = new Command();
 
 program
