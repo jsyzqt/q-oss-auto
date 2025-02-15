@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = require("commander");
 const upath_1 = __importDefault(require("upath"));
 const upload_1 = require("./upload");
-const deploy_1 = require("deploy");
+const deploy_1 = require("./deploy");
 const program = new commander_1.Command();
 program
     .option('-c, --config <path>', 'Configure file path.')
