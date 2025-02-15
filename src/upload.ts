@@ -55,7 +55,9 @@ export const UpRun = async (configFilePath: string, versionName?: string) => {
 
         const remotePath = upath.join(config.remoteSource, versionStr, relativePath);
         // await timers.setTimeout(1000);
-        const res = await aliOSSStore.put(remotePath, Buffer.from(pathString), config.oss.options);
+
+        const buf = await fs.promises.readFile(pathString)
+        const res = await aliOSSStore.put(remotePath, buf, config.oss.options);
 
         console.log('已上传：%s -> %s', pathString, remotePath);
         mutex.release();

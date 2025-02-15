@@ -45,7 +45,8 @@ const UpRun = async (configFilePath, versionName) => {
         const relativePath = upath_1.default.toUnix(upath_1.default.relative(config.localSource, pathString));
         const remotePath = upath_1.default.join(config.remoteSource, versionStr, relativePath);
         // await timers.setTimeout(1000);
-        const res = await aliOSSStore.put(remotePath, Buffer.from(pathString), config.oss.options);
+        const buf = await node_fs_1.default.promises.readFile(pathString);
+        const res = await aliOSSStore.put(remotePath, buf, config.oss.options);
         console.log('已上传：%s -> %s', pathString, remotePath);
         mutex.release();
         return {
