@@ -17,7 +17,8 @@ export type CONFIG_TYPE = {
     },
     deployConfig:{
         concurrent: number,
-        versionUsed: "disable" | "latest"
+        versionUsed: "disable" | "manual" | "latest",
+        autoActivate?: boolean
     },
     remoteSource: string,
     localSource: string,
